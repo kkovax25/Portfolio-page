@@ -1,0 +1,20 @@
+@import './variables';
+@mixin adjust-to($media, $px: 1700px) {
+  @if $media == handhelds {
+    @media only screen and (min-width: $break-small) {
+      @content;
+    }
+  } @else if $media == medium-screen {
+    @media only screen and (min-width: $break-medium) {
+      @content;
+    }
+  } @else if $media == big-screen {
+    @media only screen and (min-width: $break-large) {
+      @content;
+    }
+  } @else if $media == custom {
+    @media only screen and (min-width: $px) {
+      @content;
+    }
+  }
+}

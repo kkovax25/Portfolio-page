@@ -1,0 +1,77 @@
+@import '../../Sass/mixins';
+
+.navbar {
+  font-size: 18px;
+  background: white;
+  padding-bottom: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+  @include adjust-to(handhelds) {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0;
+    height: 70px;
+    align-items: center;
+  }
+}
+.main-nav {
+  list-style-type: none;
+  display: none;
+  @include adjust-to(handhelds) {
+    display: flex;
+    margin-right: 30px;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+}
+
+.nav-links,
+.logo {
+  text-decoration: none;
+  color: black;
+}
+
+.main-nav li {
+  text-align: center;
+  margin: 15px auto;
+  @include adjust-to(handhelds) {
+    margin: 0;
+  }
+}
+
+@include adjust-to(handhelds) {
+  .nav-links {
+    margin-left: 40px;
+  }
+}
+
+.logo {
+  display: inline-block;
+  font-size: 22px;
+  margin-top: 10px;
+  margin-left: 20px;
+  @include adjust-to(handhelds) {
+    margin-top: 0;
+  }
+}
+
+.navbar-toggle {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 24px;
+  @include adjust-to(handhelds) {
+    display: none;
+  }
+}
+
+@include adjust-to(handhelds) {
+  .logo:hover,
+  .nav-links:hover {
+    color: rgba(255, 255, 255, 1);
+  }
+}
+.active {
+  display: block;
+}
